@@ -11,6 +11,7 @@ class Blog(Base):
     title = Column(String, nullable=False)
     slug = Column(String, nullable=False)
     content = Column(Text, nullable=True)
+    photo = Column(String, nullable=True)
     author_id =  Column(UUID,ForeignKey("user.id"))
     author = relationship("User",back_populates="blogs")
     created_at = Column(DateTime, default=datetime.now)
